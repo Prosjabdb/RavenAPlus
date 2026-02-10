@@ -3,7 +3,6 @@
 # Raven A+
 <p align="center">
     <img src="https://img.shields.io/github/issues/Raven-Aplus/RavenAplus?style=flat" alt="issues">
-    <img src="https://tokei.rs/b1/github/Raven-Aplus/RavenAplus?category=code&style=flat" alt="Lines of code">
 </p>
 
 Raven B4, but for those who can't afford it.
@@ -13,7 +12,7 @@ Raven B4, but not only for Hypixel.
 support qloha:
 LTC address (bech32): ltc1qh8w8z7g0k04f0446pn4kv0mqpepvdfc46c586q
 
-<a href="https://dsc.gg/ravenaplus"><img src="https://invidget.switchblade.xyz/zSgDKArSH4" alt="https://dsc.gg/ravenaplus"/></a><br>
+<a href="https://dsc.gg/ravenaplus"><img src="https://invidget.switchblade.xyz/sFPpMBCwq4" alt="https://dsc.gg/ravenaplus"/></a><br>
 
 ![2024-08-13_10 14 36](https://github.com/user-attachments/assets/36e8920e-336e-4b62-ae3f-6b9962920812)
 ![Screenshot 2024-08-13 084510](https://github.com/user-attachments/assets/85637f18-9d6b-47d9-9dc2-cb8594aff585)
@@ -77,11 +76,8 @@ Feel free to raise an issue or submit a pull request.
 
 If you want to co-develop this project with me, please contact me.
 
-You can also support us on [Patreon](https://www.patreon.com/qloha)!
 
 <div align="center">
-
-[!![-preview](https://github.com/user-attachments/assets/ac50e6e5-3227-4ee9-9881-2e7b8ba47861)](https://www.patreon.com/qloha)
 
 <img src="https://github.com/SAWARATSUKI/KawaiiLogos/blob/main/IntelliJ IDEA/IntelliJ IDEA.png" alt="Java" width="500" />
 
