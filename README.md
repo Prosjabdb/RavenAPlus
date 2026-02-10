@@ -52,8 +52,8 @@ LTC address (bech32): ltc1qh8w8z7g0k04f0446pn4kv0mqpepvdfc46c586q
 4. **Clone the Repository**:
    - Run the following commands in the terminal or command prompt:
      ```bash
-     git clone --recursive https://github.com/qloha/Raven-Aplus.git
-     cd Raven-Aplus
+     git clone --recursive https://github.com/Raven-APlus/RavenAplus.git
+     cd RavenAplus
      ```
 
 5. **Set Up the Project**:
