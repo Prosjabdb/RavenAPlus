@@ -13,9 +13,6 @@ support qloha:
 LTC address (bech32): ltc1qh8w8z7g0k04f0446pn4kv0mqpepvdfc46c586q
 
 <a href="https://dsc.gg/ravenaplus"><img src="https://invidget.switchblade.xyz/sFPpMBCwq4" alt="https://dsc.gg/ravenaplus"/></a><br>
-
-![2024-08-13_10 14 36](https://github.com/user-attachments/assets/36e8920e-336e-4b62-ae3f-6b9962920812)
-![Screenshot 2024-08-13 084510](https://github.com/user-attachments/assets/85637f18-9d6b-47d9-9dc2-cb8594aff585)
 </div>
 
 ## How do I install this client?
