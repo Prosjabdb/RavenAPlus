@@ -2,12 +2,9 @@
   
 # Raven A+
 <p align="center">
-    <img src="https://img.shields.io/github/issues/qloha/Raven-bS?style=flat" alt="issues">
-    <img src="https://tokei.rs/b1/github/qloha/Raven-Aplus?category=code&style=flat" alt="Lines of code">
+    <img src="https://img.shields.io/github/issues/Raven-Aplus/RavenAplus?style=flat" alt="issues">
+    <img src="https://tokei.rs/b1/github/Raven-Aplus/RavenAplus?category=code&style=flat" alt="Lines of code">
 </p>
-
-[![Github Release Downloads](https://img.shields.io/github/downloads/qloha/Raven-bS/total?label=Github%20Release%20Downloads&style=flat-square)](https://github.com/qloha/Raven-bS/releases)
-
 
 Raven B4, but for those who can't afford it.
 
@@ -17,7 +14,6 @@ support qloha:
 LTC address (bech32): ltc1qh8w8z7g0k04f0446pn4kv0mqpepvdfc46c586q
 
 <a href="https://dsc.gg/ravenaplus"><img src="https://invidget.switchblade.xyz/zSgDKArSH4" alt="https://dsc.gg/ravenaplus"/></a><br>
-[QQ Group (645021103)](https://qm.qq.com/q/vv0xPdfc6A)
 
 ![2024-08-13_10 14 36](https://github.com/user-attachments/assets/36e8920e-336e-4b62-ae3f-6b9962920812)
 ![Screenshot 2024-08-13 084510](https://github.com/user-attachments/assets/85637f18-9d6b-47d9-9dc2-cb8594aff585)
@@ -28,7 +24,7 @@ LTC address (bech32): ltc1qh8w8z7g0k04f0446pn4kv0mqpepvdfc46c586q
 ### Steps:
 
 1. **Download the latest .jar file from the releases**:
-   - Download from [https://github.com/qloha/Raven-Aplus/releases](https://github.com/qloha/Raven-Aplus/releases)
+   - Download from [https://github.com/Raven-Aplus/RavenAplus/releases](https://github.com/Raven-Aplus/RavenAplus/releases)
    - This client requires Forge 1.8.9.
 
 2. **Put in mods folder of your .minecraft directory**:
