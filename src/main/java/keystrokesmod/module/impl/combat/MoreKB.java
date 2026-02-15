@@ -27,7 +27,9 @@ public class MoreKB extends IMoreKB {
                 .add(new SimpleSprintReset("Packet", this))
                 .add(new SimpleSprintReset("LegitBlock", this))
                 .add(new SimpleSprintReset("LegitInv", this))
-                .add(new SimpleSprintReset("STap", this))
+                .add(new SimpleSprintReset("STap", this))           // Proper STap
+                .add(new SimpleSprintReset("STapFast", this))       // Fast STap variant
+                .add(new SimpleSprintReset("STapPacket", this))     // Packet STap variant
                 .setDefaultValue("LegitFast")
         );
     }
@@ -45,12 +47,30 @@ public class MoreKB extends IMoreKB {
     @SubscribeEvent
     public void onMoveInput(MoveInputEvent event) {
         if (noSprint() && MoveUtil.isMoving()) {
-            switch ((int) mode.getInput()) {
-                case 1:
+            String modeName = mode.getSelected().getName().toLowerCase();
+            int modeIndex = (int) mode.getInput();
+            
+            switch (modeIndex) {
+                case 1: // LegitSneak
                     event.setSneak(true);
                     break;
-                case 3:
+                case 3: // Fast
                     event.setForward(0.7999f);
+                    break;
+                case 7: // STap
+                case 8: // STapFast
+                    // STap: Stop forward, press back + strafe
+                    event.setForward(0.0f);
+                    event.setBack(0.8f);
+                    // Add slight strafe for unpredictability
+                    if (mc.thePlayer.ticksExisted % 2 == 0) {
+                        event.setLeft(0.3f);
+                    } else {
+                        event.setRight(0.3f);
+                    }
+                    break;
+                case 9: // STapPacket - handled in onPreMotion
+                    event.setForward(0.0f);
                     break;
             }
         }
@@ -66,7 +86,8 @@ public class MoreKB extends IMoreKB {
     @SubscribeEvent
     public void onPreMotion(PreMotionEvent event) {
         if (noSprint() && MoveUtil.isMoving()) {
-            if ((int) mode.getInput() == 4) {
+            int modeIndex = (int) mode.getInput();
+            if (modeIndex == 4 || modeIndex == 9) { // Packet or STapPacket
                 event.setSprinting(false);
             }
         }
@@ -75,16 +96,25 @@ public class MoreKB extends IMoreKB {
     @Override
     public void stopSprint() {
         super.stopSprint();
-        switch ((int) mode.getInput()) {
-            case 7:
+        String modeName = mode.getSelected().getName().toLowerCase();
+        int modeIndex = (int) mode.getInput();
+        
+        switch (modeIndex) {
+            case 7: // STap
+            case 8: // STapFast
+            case 9: // STapPacket
+                // STap: Press back key, release forward
                 ((KeyBindingAccessor) mc.gameSettings.keyBindBack).setPressed(true);
-            case 0:
                 ((KeyBindingAccessor) mc.gameSettings.keyBindForward).setPressed(false);
                 break;
-            case 5:
+            case 0: // Legit
+            case 2: // LegitFast
+                ((KeyBindingAccessor) mc.gameSettings.keyBindForward).setPressed(false);
+                break;
+            case 5: // LegitBlock
                 Utils.sendClick(1, true);
                 break;
-            case 6:
+            case 6: // LegitInv
                 ((KeyBindingAccessor) mc.gameSettings.keyBindInventory).setPressed(true);
                 KeyBinding.onTick(mc.gameSettings.keyBindInventory.getKeyCode());
                 ((KeyBindingAccessor) mc.gameSettings.keyBindInventory).setPressed(false);
@@ -96,16 +126,25 @@ public class MoreKB extends IMoreKB {
     @Override
     public void reSprint() {
         super.reSprint();
-        switch ((int) mode.getInput()) {
-            case 7:
+        String modeName = mode.getSelected().getName().toLowerCase();
+        int modeIndex = (int) mode.getInput();
+        
+        switch (modeIndex) {
+            case 7: // STap
+            case 8: // STapFast
+            case 9: // STapPacket
+                // Restore back key to actual keyboard state, restore forward
                 ((KeyBindingAccessor) mc.gameSettings.keyBindBack).setPressed(Keyboard.isKeyDown(mc.gameSettings.keyBindBack.getKeyCode()));
-            case 0:
                 ((KeyBindingAccessor) mc.gameSettings.keyBindForward).setPressed(Keyboard.isKeyDown(mc.gameSettings.keyBindForward.getKeyCode()));
                 break;
-            case 5:
+            case 0: // Legit
+            case 2: // LegitFast
+                ((KeyBindingAccessor) mc.gameSettings.keyBindForward).setPressed(Keyboard.isKeyDown(mc.gameSettings.keyBindForward.getKeyCode()));
+                break;
+            case 5: // LegitBlock
                 Utils.sendClick(1, false);
                 break;
-            case 6:
+            case 6: // LegitInv
                 if (mc.currentScreen instanceof GuiInventory)
                     mc.thePlayer.closeScreen();
                 break;
